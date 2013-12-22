@@ -4,11 +4,22 @@
 	    <description>Tomato &amp; Cheese</description>
 	    <size name="Small">
 		<description>Small</description>
-                <price>5.80</price>
+                <price>$5.80</price>
 	    </size>
 	    <size name="Large">
 		<description>Large</description>
-                <price>9.75</price>
+                <price>$9.75</price>
+	    </size>
+	</pizza>
+	<pizza name="Vegetarian">
+	    <description>Vegatarian (Sliced Tomatoes, Onion, Peppers, Mushrooms, Broccoli, &amp; Mozzarella)</description>
+	    <size type="Small">
+		<description>Small</description>
+		    <price>$9.80</price>
+	    </size>
+	    <size type="Large">
+		<description>Large</description>
+		<price>$15.80</price>
 	    </size>
 	</pizza>
     </pizzas>

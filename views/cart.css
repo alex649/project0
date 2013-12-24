@@ -1,0 +1,33 @@
+.cart
+{
+    text-align: center;
+    margin-top: 0px;
+    margin-right: 250px;
+    margin-bottom: 0px;
+    margin-left: 250px;
+}
+
+.description
+{
+    float:left;
+}
+
+.input
+{
+    float:right;
+}
+
+.cost
+{
+    float:right;
+}
+
+.total_text
+{
+    float:left;
+}
+
+.total_number
+{
+    float:right;
+}

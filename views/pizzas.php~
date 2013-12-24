@@ -24,7 +24,7 @@
 
             ?>
 	</select>
-	Quantity:<input type=text name=quantity maxlength=1 value=1 size=1></input>
+	Quantity:<input type=text name=quantity maxlength=3 value=1 size=3></input>
 	<input type="submit" name="action" value="Add to Cart">
     </form>
 </div>

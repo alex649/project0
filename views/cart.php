@@ -64,7 +64,7 @@ elseif (isset($_POST["action"]))
 	            'Price per Pizza' => $price_per_item, 
 		        'Total' => $total_price);
 
-        display_contents($referring_page);
+        display_contents();
     }
 }
 

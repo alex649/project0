@@ -1,4 +1,3 @@
-<!--A menu list of different kinds of food with sizes and prices --> 
 <menu>
     <pizzas>
         <pizza name="Tomato &amp; Cheese">

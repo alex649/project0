@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * Renders the website pages 
+ * including those that are redirected from index.php.
+ */
+
 ini_set('display_errors', 'On');
 require_once('includes/helpers.php');
  
@@ -10,6 +16,9 @@ else {
     $page = 'index';
 }
 
+
+$page = basename($page, ".php");
+
 // show page
 switch ($page)
 {
@@ -19,16 +28,16 @@ switch ($page)
         render('templates/footer');
         break;
  
-    case 'pizzas':
-        render('views/templates/header', array('title' => 'Pizzas'));
-        render('views/pizzas');
-        render('views/templates/footer');
+    case 'food':
+        render('templates/header', array('title' => 'Selection'));
+        render('food');
+        render('templates/footer');
         break;
- 
+
     case 'cart':
-        render('views/templates/header', array('title' => 'Shopping Cart'));
-        render('views/cart');
-        render('views/templates/footer');
+        render('templates/header', array('title' => 'Shopping Cart'));
+        render('cart');
+        render('templates/footer');
         break;
 }
  

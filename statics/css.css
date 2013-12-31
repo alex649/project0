@@ -1,0 +1,48 @@
+/* index.php styles */
+.index
+{
+    text-align: center;
+    background-color: #00ff7f;
+}
+
+/* food.php styles */
+.items
+{
+    text-align: center;
+}
+
+/* cart.php styles */
+.cart
+{
+    text-align: center;
+    margin-top: 0px;
+    margin-right: 250px;
+    margin-bottom: 0px;
+    margin-left: 250px;
+}
+
+/* functions.php styles */
+.description
+{
+    float:left;
+}
+
+.input
+{
+    float:right;
+}
+
+.cost
+{
+    float:right;
+}
+
+.total_text
+{
+    float:left;
+}
+
+.total_number
+{
+    float:right;
+}

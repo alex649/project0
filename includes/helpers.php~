@@ -3,7 +3,6 @@
 /**
  * Renders template.
  *
- * @param template path
  * @param array $data
  */
 function render($template, $data = array())

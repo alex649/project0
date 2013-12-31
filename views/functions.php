@@ -1,77 +1,49 @@
 <?php
 
-// Display items and total in the cart.
+/**
+  * Displays items with price in the shopping cart.
+  */
 function display_contents()
 {
     $total = 0;
+    $element_name = "element";
+    $i = 1;
 
     // Display items and calculate total.
-    foreach ($_SESSION['items'] as $type_of_food)
+    foreach ($_SESSION['items'] as $item)
     {
-	foreach ($type_of_food as $item)
-	{ 
-            print "<div class='items'>";
-	        print "<div class='description'>";
-	            print $item['Description'];
-	        print "</div>";
-	        print "<div class='input'>";
-	            print str_repeat('&nbsp;', 10);
-	            print "<input type=text name=";
-                        print $item['Description'];
-		        print " maxlength=1 size=1 value=";
-		        print $item['Quantity'];
-		        print ">";
-	            print "</input>";
-	        print "</div>";
-	        print "<div class='cost'>";
-	        print str_repeat('&nbsp;', 5);
-	            print "$" . number_format($item['Total'], 2);
-	        print "</div>";
-	    print "</div>";
-	    print "</br>";
-	    print "</br>";
-	    print "</br>";
-	    $total = $total + $page['Total'];
-	}
-    }
-
-    displayTotal($total);
-}
-
-// Change quantities and display.
-function change_and_display()
-{
-    $total = 0;
-
-    // Display items and calculate total.
-    foreach ($_SESSION['items'] as $items) {
         print "<div class='items'>";
 	    print "<div class='description'>";
-	        print $page['Description'];
+	        print $item['Description'];
 	    print "</div>";
 	    print "<div class='input'>";
 	        print str_repeat('&nbsp;', 10);
 	        print "<input type=text name=";
-                    print $page['Description'];
+                    print $element_name . "$i";
 		    print " maxlength=1 size=1 value=";
-		    print $page['Quantity'];
+		    print $item['Quantity'];
 		    print ">";
 	        print "</input>";
 	    print "</div>";
-	    print str_repeat('&nbsp;', 5);
 	    print "<div class='cost'>";
-	        print "$" . number_format($page['Total'], 2);
+	    print str_repeat('&nbsp;', 5);
+	        print "$" . number_format($item['Total'], 2);
 	    print "</div>";
 	print "</div>";
 	print "</br>";
 	print "</br>";
-	$total = $total + $page['Total'];
+	print "</br>";
+	$total = $total + $item['Total'];
+	$i++;
     }
 
     displayTotal($total);
 }
 
-// Display total.
+/**
+  * Displays total.
+  */
+
 function displayTotal($cost)
 {
 
@@ -90,6 +62,37 @@ function displayTotal($cost)
 	{
 	    $total_error = true;
 	}
+}
+
+/**
+ * Recalculates quantities in the shopping cart.
+ */
+function recalculate()
+{
+    $total = 0;
+    $element_name = "element";
+    $i = 1;
+
+    foreach ($_SESSION['items'] as $item)
+    {
+	$name = $element_name . $i;
+	$i++;
+	$new_quantity = $_POST[$name];
+
+	if ($new_quantity == 0)
+	{
+	    unset($_SESSION['items'][$item['Description']]);
+	    continue;
+	}
+
+	$new_cost = $item['Price'] * $new_quantity;
+
+	if ($item['Quantity'] != $new_quantity)
+	{
+	    $_SESSION['items'][$item['Description']]['Quantity'] = $new_quantity;
+	    $_SESSION['items'][$item['Description']]['Total'] = $new_cost;
+	}
+    }
 }
 
 ?>

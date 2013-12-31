@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteRule ^statics/ - [L,NC]
+RewriteRule ^(.*)$ index.php?page=$1 [L,QSA]
+

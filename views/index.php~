@@ -1,6 +1,3 @@
-<!--
-    Displays drop-down menu of items to be ordered.
--->
 <div class='index'>
     <form action="food.php" method="post">
         <p>Please choose the type of food you would like to order from the

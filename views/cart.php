@@ -32,6 +32,7 @@ if (isset($_POST["submit"]))
 elseif (isset($_POST["action"]))
 {
 
+    // Check that valid quantities have been entered.
     if (empty($_POST["quantity"]) || (strlen($_POST["quantity"]) > 1)
         || ($_POST["quantity"] < 1) || ($_POST["quantity"] > 9))
     {
@@ -41,14 +42,18 @@ elseif (isset($_POST["action"]))
     {
         if (isset($_POST["item"]))
 	{
-	    $full_description = $_POST["item"];
+	    $full_description = htmlspecialchars($_POST["item"]);
 	}
 
+	// Takes full description from the menu item and breaks it into
+	// description (includes description and size) and price.
         list($description, $price_per_item) = explode("$", $full_description);
-        $quantity = $_POST["quantity"];
+
+        $quantity = htmlspecialchars($_POST["quantity"]);
+
         $total_price = $quantity * $price_per_item;
 
-        // Fill $_SESSION.
+        // Fills $_SESSION.
         $_SESSION['items'][$description] 
 	    = array('Description' => $description, 
 	        'Quantity' => $quantity,

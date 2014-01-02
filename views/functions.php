@@ -43,7 +43,6 @@ function display_contents()
 /**
   * Displays total.
   */
-
 function displayTotal($cost)
 {
 

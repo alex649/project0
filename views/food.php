@@ -30,9 +30,11 @@
             foreach ($dom->xpath("/menu/$name/$trimmed_name") as $food)
             {
 
+		// Check that $food->price is a price. (which indicates
+		// that this food has only one size)
+		// Display the result.
 		if (substr($food->price, 0, 1) == "$")
 		{
-		    print "True2";
 		    $item = $food->description
 			    . " " . $food->price;
 
@@ -44,9 +46,10 @@
 		}
 		else
 		{
+		    // Loop through each type of size for
+		    // each of the items and display the results.
 		    foreach ($food->size as $size)
 		    {
-		        print "True";
 		        $item = $food->description 
 			    . " " . $size->description 
 			        . " " . $size->price;

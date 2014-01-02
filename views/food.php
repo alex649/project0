@@ -23,7 +23,8 @@
 	    print "<select name='item'>";
 
 	    $trimmed_name = rtrim($name, "s");
-            $dom = simplexml_load_file("views/menu.xml");
+
+            $dom = simplexml_load_file("model/menu.xml");
 
 	    $item = "";
 

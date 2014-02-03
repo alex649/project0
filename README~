@@ -1,0 +1,24 @@
+Project0
+
+Created by Alex Spivakovsky
+
+This application serves as an online ordering system for the 'Three Aces Pizza' restaurant.  
+The index page of the website presents the user with a drop-down menu to choose the type of food
+from the list of items (Pizzas, Salads, Grinders, etc.).  Upon making the selection,
+the user arrives at the next page that presents the menu and prices for items of this particular food category.  
+For example, if the user has chosen 'Pizzas' from the previous page, the next page presents a drop-down menu 
+that contains items such as "Tomato & Cheese small $5.80" and "Tomato & Cheese large $9.75".  
+
+Upon making a selection, the user arrives at the Shopping Cart that contains items, quantities, 
+and prices that have been added to the cart.  The user has the option of changing item quantities, 
+going back to the Welcome page to choose more food to buy, or to submit the order.
+
+To obtain the menu of different items with prices for each food category, 
+the application parses an XML file, project0/model/menu.xml.  In other words, every time the user visits 
+the page project0/food.php, the program parses the xml file to obtain menu information.
+
+The application complies with the Model-View-Controller architecture.  
+In this particular application project0/index.php serves as the Controller for the application.
+project0/model/functions.php contain appropriate functions for computing and displaying order totals.  
+project0/model/menu.xml file is the database of the application, and project0/views contains code
+for display.

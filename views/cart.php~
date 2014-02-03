@@ -11,7 +11,7 @@
 <?php
 
 require_once('includes/helpers.php');
-require_once('model/functions.php');
+require_once('views/functions.php');
 
 session_start();
 
